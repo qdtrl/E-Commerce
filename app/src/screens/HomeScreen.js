@@ -7,8 +7,10 @@ import Product from "../components/Product";
 
 //Actions
 import { getProducts as listProducts } from "../redux/actions/productActions";
+import { useTranslation } from "react-i18next";
 
 const HomeScreen = () => {
+  const {t} = useTranslation();
   const dispatch = useDispatch();
 
   const getProducts = useSelector((state) => state.getProducts);
@@ -21,6 +23,7 @@ const HomeScreen = () => {
   return (
     <div className="homescreen">
       <h2 className="homescreen__title">Latest Products</h2>
+      <p>{t('welcome')}</p>
       <div className="homescreen__products">
         {loading ? (
           <h2>Loading...</h2>

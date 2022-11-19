@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Languages from "./Languages";
 
 const Navbar = ({ click }) => {
   const cart = useSelector((state) => state.cart);
@@ -13,7 +14,7 @@ const Navbar = ({ click }) => {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <h2>MERN Shopping Cart</h2>
+        <h2>MERN Shopping Cart </h2>
       </div>
 
       <ul className="navbar__links">
@@ -27,6 +28,9 @@ const Navbar = ({ click }) => {
         </li>
         <li>
           <Link to="/">Shop</Link>
+        </li>
+        <li>
+          <Languages />
         </li>
       </ul>
 
